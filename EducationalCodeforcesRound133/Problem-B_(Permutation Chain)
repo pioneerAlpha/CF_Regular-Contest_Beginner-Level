@@ -1,0 +1,54 @@
+Problem Link - https://codeforces.com/contest/1716/problem/B
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int len=n;
+        cout<<len<<endl;
+        vector<int>v;
+        for(int i=1;i<=n;i++)
+        {
+            int num=i;
+            v.push_back(num);
+        }
+
+        for(int i=0;i<n;i++)
+        {
+            cout<<v[i]<<" ";
+        }
+        cout<<endl;
+        int pos=n-2;
+        for(int i=1;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(pos==j)
+                {
+                    swap(v[j+1],v[j]);
+                    cout<<v[j]<<" "<<v[j+1]<<" ";
+                    j++;
+                    pos--;
+                    continue;
+                }
+                cout<<v[j]<<" ";
+            }
+            cout<<endl;
+        }
+    }
+    return 0;
+}
+
+
+
+
+Solution link - https://codeforces.com/contest/1716/submission/166995117
